@@ -138,7 +138,7 @@ export default function Home() {
             {examples.map((x, i) => <button key={x} onClick={() => setBrief(x)}>0{i + 1} — {x}</button>)}
           </div>
 
-          {history.length > 0 && <div className="history"><span>Recent on this device</span>{history.map(h => <button key={h} onClick={() => setBrief(h)}>{h}</button>)}</div>}
+          {history.length > 0 && <div className="history"><div className="history-head"><span>Recent on this device</span><button className="clear-history" onClick={() => { setHistory([]); localStorage.removeItem("ticketsmith-history"); }}>Clear</button></div>{history.map(h => <button key={h} onClick={() => setBrief(h)}>{h}</button>)}</div>}
         </aside>
 
         <section className={`output ${plan ? "has-plan" : ""}`} aria-live="polite">

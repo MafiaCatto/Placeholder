@@ -31,7 +31,7 @@ select { width:100%; border:1px solid #bdbdb5; background:var(--card); border-ra
 .examples > span, .history > span { display:block; font:10px var(--font-geist-mono); color:#8a8f89; text-transform:uppercase; letter-spacing:.1em; margin-bottom:8px; }
 .examples button, .history button { border:0; background:none; padding:7px 0; color:#555e58; font-size:11px; display:block; text-align:left; width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .examples button:hover, .history button:hover { color:var(--blue); }
-.history { margin-top:18px; }
+.history { margin-top:18px; }.history-head{display:flex;justify-content:space-between;align-items:center}.history-head>span{margin-bottom:0!important}.history .clear-history{width:auto;padding:2px 0;color:#9a5149;font:10px var(--font-geist-mono);text-transform:uppercase;letter-spacing:.06em}
 .output { padding:5vh 5vw; background:#ece9e1; overflow:auto; }
 .empty-state { max-width:520px; margin:8vh auto; text-align:center; }
 .blueprint { height:240px; width:290px; margin:0 auto 48px; border:1px solid #9daee5; background-color:#e8ebf6; background-image:linear-gradient(#ccd4ef 1px,transparent 1px),linear-gradient(90deg,#ccd4ef 1px,transparent 1px); background-size:18px 18px; padding:40px 30px; transform:rotate(-2deg); box-shadow:12px 14px 0 #d9d5ca; }
