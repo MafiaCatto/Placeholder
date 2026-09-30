@@ -122,7 +122,8 @@ export default function Home() {
             placeholder="e.g. Add passwordless login with magic links that expire after 10 minutes…"
             onKeyDown={(e) => { if ((e.metaKey || e.ctrlKey) && e.key === "Enter") generate(); }}
           />
-          <div className="char-row"><span>Be specific about users and constraints</span><span>{brief.length}/500</span></div>
+          <div className="char-row"><span>Be specific about users and constraints</span><span>{brief.trim() ? `${brief.trim().split(/\s+/).length} words · ` : ""}{brief.length}/500</span></div>
+          {brief && <button className="clear-brief" onClick={() => setBrief("")}>Clear brief</button>}
 
           <div className="select-row">
             <div><label htmlFor="type">Work type</label><select id="type" value={type} onChange={(e) => setType(e.target.value)}><option>Feature</option><option>Bug fix</option><option>Refactor</option></select></div>

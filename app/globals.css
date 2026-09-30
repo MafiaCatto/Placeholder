@@ -21,7 +21,7 @@ label { display:block; font-weight:700; font-size:12px; margin-bottom:9px; }
 textarea { width:100%; min-height:145px; resize:vertical; border:1px solid #bdbdb5; background:var(--card); border-radius:4px; padding:18px; line-height:1.5; outline:none; color:var(--ink); }
 textarea:focus, select:focus { border-color:var(--blue); box-shadow:0 0 0 3px #4867d61b; }
 .char-row { color:#8a8f89; font:10px var(--font-geist-mono); display:flex; justify-content:space-between; margin:8px 0 24px; }
-.select-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.clear-brief{border:0;background:none;color:#8a8f89;font:10px var(--font-geist-mono);padding:0 0 16px;text-decoration:underline}.clear-brief:hover{color:var(--blue)}.select-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 select { width:100%; border:1px solid #bdbdb5; background:var(--card); border-radius:4px; padding:12px; color:var(--ink); outline:none; }
 .generate { width:100%; border:0; background:var(--green); color:white; border-radius:4px; padding:16px 18px; margin-top:20px; text-align:left; font-weight:700; display:flex; justify-content:space-between; transition:.2s; }
 .generate span { color:#bdd4c7; font:11px var(--font-geist-mono); }
