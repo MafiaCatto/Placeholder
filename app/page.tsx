@@ -97,6 +97,17 @@ export default function Home() {
     setCopied(true);
     setTimeout(() => setCopied(false), 1600);
   }
+  function downloadPlan() {
+    if (!plan) return;
+    const content = `# ${plan.title}\n\n${plan.summary}\n\n## Acceptance criteria\n${plan.criteria.map(item => `- ${item}`).join("\n")}\n\n## Implementation plan\n${plan.steps.map((item, index) => `${index + 1}. ${item}`).join("\n")}\n\n## Test cases\n${plan.tests.map(item => `- ${item}`).join("\n")}`;
+    const file = new Blob([content], { type: "text/markdown" });
+    const url = URL.createObjectURL(file);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${plan.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.md`;
+    link.click();
+    URL.revokeObjectURL(url);
+  }
 
   return (
     <main>
@@ -157,7 +168,7 @@ export default function Home() {
             <article className="plan">
               <div className="plan-head">
                 <div><span className="ticket">TS-{String(history.indexOf(plan.title) + 101).padStart(3, "0")}</span><h2>{plan.title}</h2><p>{plan.summary}</p></div>
-                <button className="copy" onClick={copyPlan}>{copied ? "Copied!" : "Copy markdown"}</button>
+                <div className="plan-actions"><button className="copy" onClick={copyPlan}>{copied ? "Copied!" : "Copy markdown"}</button><button className="download" onClick={downloadPlan}>Download .md</button></div>
               </div>
               <div className="meta">
                 <span><small>ESTIMATE</small>{plan.estimate}</span>
